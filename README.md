@@ -1,5 +1,8 @@
 <h1>🌀 POKEMON 🌀</h1>
-<img src="https://github.com/aarush368/KECTEST/blob/master/img/aarush.jpg" alt="Girl in a jacket" width="500" height="600">
+<img src="https://github.com/aarush368/pokemon_android_application/blob/master/app/img/darkmode_detail_screen.jpg" alt="pokemon" width="200" height="400">
+<img src="https://github.com/aarush368/pokemon_android_application/blob/master/app/img/darkmode_detail_screen.jpg" alt="pokemon" width="200" height="400">
+<img src="https://github.com/aarush368/pokemon_android_application/blob/master/app/img/darkmode_detail_screen.jpg" alt="pokemon" width="200" height="400">
+<img src="https://github.com/aarush368/pokemon_android_application/blob/master/app/img/darkmode_detail_screen.jpg" alt="pokemon" width="200" height="400">
 # Pokémon Android Application
 
 This is a Pokémon Android application built using Kotlin, Jetpack Compose, Hilt for dependency injection, and the MVVM (Model-View-ViewModel) pattern. The application fetches a list of Pokémon from a server, and upon clicking an item, navigates to a details page to show more information about the selected Pokémon.
