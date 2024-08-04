@@ -22,15 +22,41 @@ android {
         }
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+    signingConfigs {
+        create("releasePokemon") {
+            storeFile = file("pokemon-key-store.jks")
+            storePassword = "pokemon@123"
+            keyAlias = "key0"
+            keyPassword = "pokemon@123"
         }
     }
+
+    buildTypes {
+
+        release {
+            getByName("release") {
+                isMinifyEnabled = false
+                proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    file("proguard-rules.pro")
+                )
+                signingConfig = signingConfigs.getByName("releasePokemon")
+            }
+        }
+
+
+        applicationVariants.all {
+            val variant = this
+            variant.outputs
+                .map { it as com.android.build.gradle.internal.api.BaseVariantOutputImpl }
+                .forEach { output ->
+                    val outputFileName =
+                        "${variant.baseName} - ${variant.versionName} ${variant.versionCode}.apk"
+                    output.outputFileName = outputFileName
+                }
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -76,7 +102,6 @@ dependencies {
     kapt("androidx.hilt:hilt-compiler:1.2.0")
     implementation("androidx.work:work-runtime-ktx:2.9.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-
 
 
     // Lifecycle
@@ -126,5 +151,5 @@ dependencies {
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.27.0")
 
     //add splash screen dependency
-    implementation ("androidx.core:core-splashscreen:1.0.0-alpha02")
+    implementation("androidx.core:core-splashscreen:1.0.0-alpha02")
 }

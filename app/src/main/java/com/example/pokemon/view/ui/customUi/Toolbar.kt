@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -21,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.pokemon.view.graph.NavGraphRoute
 import com.example.pokemon.view.ui.theme.RobotoMedium
 
 @Composable
@@ -44,18 +46,15 @@ fun Toolbar(
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
                             contentDescription = "Back",
-                            tint = MaterialTheme.colors.onPrimary
+                            tint = MaterialTheme.colors.onPrimary,
+                            modifier = Modifier.size(48.dp)
                         )
                     }
-                    Text(
-                        text = headingName,
-                        fontFamily = RobotoMedium,
-                        color = MaterialTheme.colors.onPrimary,
-                        fontSize = 20.sp,
+                    TextBold(
+                        msg = headingName,
                         modifier = Modifier.weight(1f),
-                        textAlign = TextAlign.Center
                     )
-                    Spacer(modifier = Modifier.width(48.dp)) // Placeholder for symmetry
+                    Spacer(modifier = Modifier.width(36.dp)) // Placeholder for symmetry
                 }
             }
         },
