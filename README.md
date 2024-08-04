@@ -56,6 +56,10 @@ The project uses Retrofit to fetch data from the server. Make sure you have the 
 
 ## Code Overview
 
+## Download App. 
+1. [Download Pokémon App](https://drive.google.com/file/d/1vydt6_G-GEWlmZiDNJ6S0sETwFJ42eJg/view?usp=sharing)
+
+
 ### Directory Structure
 
 ```plaintext
