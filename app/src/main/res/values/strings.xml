@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Pokemon</string>
+    <string name="app_exit_label">Press BACK again to exit</string>
+</resources>
