@@ -113,7 +113,7 @@ fun PokemonListScreen(
                             msg = "Pokemon",
                             modifier = Modifier.weight(1f),
                         )
-                        Spacer(modifier = Modifier.width(36.dp)) // Placeholder for symmetry
+                        Spacer(modifier = Modifier.width(36.dp))
                     }
                 },
                 elevation = 10.dp
@@ -224,7 +224,7 @@ fun PokemonItem(pokemon: Pokemon, onClickItem: () -> Unit, imageUrl: String) {
                 Spacer(modifier = Modifier.height(24.dp))
                 Text(
                     text = pokemon.name?.replaceFirstChar { it.uppercase() }.orEmpty(),
-                     fontFamily = RobotoMedium,
+                    fontFamily = RobotoMedium,
                     fontSize = 24.sp
                 )
             }

@@ -3,7 +3,6 @@ package com.example.pokemon.view.ui.screen
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -13,15 +12,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.Scaffold
-import androidx.compose.material.TopAppBar
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -35,9 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
-import com.example.pokemon.model.Abilities
 import com.example.pokemon.utility.BackPressHandler
-import com.example.pokemon.view.ui.customUi.TextBold
 import com.example.pokemon.view.ui.customUi.Toolbar
 import com.example.pokemon.view.ui.theme.RobotoBold
 import com.example.pokemon.view.ui.theme.RobotoRegular
@@ -92,8 +84,8 @@ fun DetailsScreen(
                                 .toUpperCase(),
                             style = typography.h4,
                             fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.onPrimary
-                        )
+                            color = androidx.compose.material.MaterialTheme.colors.onPrimary,
+                            )
                         Spacer(modifier = Modifier.height(16.dp))
                         Column(
                             horizontalAlignment = Alignment.Start
@@ -129,17 +121,18 @@ fun AttributeRow(attribute: String, value: String) {
     ) {
         Text(
             text = attribute,
-            color = MaterialTheme.colorScheme.onPrimary,
             fontWeight = FontWeight.Bold,
             fontSize = 24.sp,
-            fontFamily = RobotoBold
-        )
+            fontFamily = RobotoBold,
+            color = androidx.compose.material.MaterialTheme.colors.onPrimary,
+
+            )
         Text(
             text = value,
-            color = MaterialTheme.colorScheme.onPrimary,
             fontSize = 18.sp,
-            fontFamily = RobotoRegular
-        )
+            fontFamily = RobotoRegular,
+            color = androidx.compose.material.MaterialTheme.colors.onPrimary,
+            )
     }
     Spacer(modifier = Modifier.height(8.dp))
 }
